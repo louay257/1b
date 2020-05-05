@@ -38,40 +38,40 @@ return p_new;
 
 Dlist *dlist_append(Dlist *p_list, int data)
 {
-if (p_list != NULL) /* On vÈrifie si notre liste a ÈtÈ allouÈe */
+if (p_list != NULL) /* On v√©rifie si notre liste a √©t√© allou√©e */
 {
-struct node *p_new = malloc(sizeof *p_new); /* CrÈation d'un
+struct node *p_new = malloc(sizeof *p_new); /* Cr√©ation d'un
 nouveau node */
-if (p_new != NULL) /* On vÈrifie si le malloc n'a pas ÈchouÈ */
+if (p_new != NULL) /* On v√©rifie si le malloc n'a pas √©chou√© */
 {
-p_new->data =gets(); /* On 'enregistre' notre donnÈe */
+p_new->data =gets(); /* On 'enregistre' notre donn√©e */
 p_new->p_next = NULL; /* On fait pointer p_next vers NULL */
-if (p_list->p_tail == NULL) /* Cas o˘ notre liste est vide
-(pointeur vers fin de liste ‡ NULL) */
+if (p_list->p_tail == NULL) /* Cas o√π notre liste est vide
+(pointeur vers fin de liste √† NULL) */
 {p_new->p_prev = NULL; /* On fait pointer p_prev vers NULL
 */
-p_list->p_head = p_new; /* On fait pointer la tÍte de liste
-vers le nouvel ÈlÈment */
+p_list->p_head = p_new; /* On fait pointer la t√™te de liste
+vers le nouvel √©l√©ment */
 p_list->p_tail = p_new; /* On fait pointer la fin de liste
-vers le nouvel ÈlÈment */
+vers le nouvel √©l√©ment */
 }
-else /* Cas o˘ des ÈlÈments sont dÈj‡ prÈsents dans notre liste
+else /* Cas o√π des √©l√©ments sont d√©j√† pr√©sents dans notre liste
 */
 {
 p_list->p_tail->p_next = p_new; /* On relie le dernier
-ÈlÈment de la liste vers notre nouvel ÈlÈment (dÈbut du chaÓnage) */
+√©l√©ment de la liste vers notre nouvel √©l√©ment (d√©but du cha√Ænage) */
 p_new->p_prev = p_list->p_tail; /* On fait pointer p_prev
-vers le dernier ÈlÈment de la liste */
+vers le dernier √©l√©ment de la liste */
 p_list->p_tail = p_new; /* On fait pointer la fin de liste
-vers notre nouvel ÈlÈment (fin du chaÓnage: 3 Ètapes) */
+vers notre nouvel √©l√©ment (fin du cha√Ænage: 3 √©tapes) */
 }
-p_list->length++; /* IncrÈmentation de la taille de la liste */
+p_list->length++; /* Incr√©mentation de la taille de la liste */
 }
 }
 return p_list; /* on retourne notre nouvelle liste */
 }
 
-int main()
+
 {
 
 }
